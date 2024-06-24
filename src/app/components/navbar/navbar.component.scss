@@ -21,7 +21,24 @@
 // }
 
 /* Navbar Styles src="../../../../public/images/keralalogo-removebg-preview.png"*/
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  transition: top 0.3s, opacity 0.3s;
+}
 
+.semi-transparent {
+  opacity: 0.7;
+}
+// nav {
+//   position: fixed;
+//   top: 0;
+//   z-index: 1000;
+//   width: 100%;
+//   transition: top 0.5s;
+// }
 .logo{
   width: 100px;
   height: 70px;
@@ -34,13 +51,13 @@
 }
 .navbar {
     width: 100%;
-    background-color: rgba(252, 252, 252, 0.5); /* Semi-transparent background */
-    color: #333;
+    background-color: rgba(222, 217, 217, 0.5); /* Semi-transparent background */
+    color: #080808;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 1000;
   }
@@ -52,6 +69,7 @@
   .navbar-nav {
     list-style: none;
     display: flex;
+    
   }
   
   .nav-item {
@@ -59,15 +77,18 @@
 
     
   }
+  .nav-tabs {
+    border: none;
+  }
   .nav-tabs .nav-link.active {
-    color: #495057;
-    background-color: #fff8f8ce;
+    color: #000000;
+    background-color: #3d9685ce;
     border-color: #dee2e6 #dee2e6 #fff;
 }
   
   .nav-link {
     text-decoration: none;
-    color: #252323;
+    color: #332a2a;
     background-color: rgba(0, 255, 255, 0.187);
     border-radius: 10%;
 

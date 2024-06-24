@@ -1,4 +1,53 @@
-<div class="home-content">
+
+  <section class="default-banner active-blog-slider">
+    <div *ngFor="let slide of slides; let i = index" 
+         class="item-slider relative" 
+         [style.background-image]="'url(' + slide.imageUrl + ')'"
+         [style.background-size]="'cover'"
+         [class.active]="currentSlide === i">
+      <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+      <div class="container">
+        <div class="row fullscreen justify-content-center align-items-center">
+          <div class="col-md-10 col-12">
+            <div class="banner-content text-center">
+              <h4 class="text-white mb-20 text-uppercase">{{slide.subtitle}}</h4>
+              <h1 class="text-uppercase text-white">{{slide.title}}</h1>
+              <p class="text-white">{{slide.description}}</p>
+              <a routerLink="/district" class="text-uppercase header-btn">Discover more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <div class="districtpage">
+    <div>
+      <h1>The Whole of kerala</h1>
+    </div>
+  
+  
+  <div class="card-container ">
+  
+  
+      @for (item of KERALA_DISTRICTS;track item.name) {
+          <div class="card" routerLink="/{{item.name}}">
+              <img [src]="item.images[0]" alt="{{ item.name }}">
+              <div class="card-content">
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.description }}</p>
+              </div>
+            </div>
+      }
+  
+    </div>
+  </div>
+
+
+
+  <div class="home-content">
     <h1 >Explore the world with us. 
         <br>Find your next dream location and plan your trip now to kerala!</h1>
   </div>

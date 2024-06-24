@@ -1,11 +1,21 @@
-<div class="card-container">
+<div class="districtpage">
+  <div>
+    <h1>The Whole of kerala</h1>
+  </div>
+
+
+<div class="card-container ">
+
+
     @for (item of KERALA_DISTRICTS;track item.name) {
-        <div routerLink="/{{item.name}}">
+        <div class="card" routerLink="/{{item.name}}">
             <img [src]="item.images[0]" alt="{{ item.name }}">
-            <h3>{{ item.name }}</h3>
-            <!-- <h2>{{KERALA_DISTRICTS.key}}</h2> -->
-            <p>{{ item.description }}</p>
+            <div class="card-content">
+              <h3>{{ item.name }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
           </div>
     }
 
   </div>
+</div>

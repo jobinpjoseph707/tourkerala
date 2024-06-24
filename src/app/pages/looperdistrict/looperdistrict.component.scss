@@ -1,0 +1,132 @@
+.districts-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 7.5%;
+  }
+  
+  .parallax-background {
+    height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .attractions-container {
+    display: flex;
+    overflow-x: auto;
+  }
+  
+//   .attraction-card {
+//     margin: 10px;
+//     flex: 0 0 auto;
+//     height:60vh;
+//     width: auto;
+//     padding: 10px;
+//   }
+  
+//   .attraction-info {
+//     background-color: white;
+//     padding: 10px;
+//   }
+
+
+.attraction-card {
+    height: 80vh;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .attraction-card img {
+    max-height: 70%;
+    object-fit: cover;
+  }
+  
+  .attraction-card .attraction-info {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .gallery img {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    object-fit: cover;
+  }
+  
+  
+
+// .district-card {
+//     border: 1px solid #ccc;
+//     border-radius: 8px;
+//     padding: 20px;
+//     padding-top: 7.5%;
+//     margin-bottom: 20px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
+  
+//   .district-card h1 {
+//     color: #333;
+//   }
+  
+//   .district-card p {
+//     color: #666;
+//   }
+  
+//   .district-image {
+//     width: 100%;
+//     height: auto;
+//   }
+  
+//   .attraction {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     margin-bottom: 20px;
+//   }
+  
+//   .attraction-image {
+//     width: 100px;
+//     height: 100px;
+//     object-fit: cover;
+//     border-radius: 50%;
+//   }
+  
+//   .image-gallery {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 10px;
+//     justify-content: center;
+//   }
+  
+//   .gallery-image {
+//     width: 100px;
+//     height: 100px;
+//     object-fit: cover;
+//     border-radius: 8px;
+//   }

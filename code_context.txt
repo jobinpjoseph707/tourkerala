@@ -513,12 +513,16 @@ export class LoginComponent {
   .navbar-nav {
     list-style: none;
     display: flex;
+    
   }
   
   .nav-item {
     margin-left: 20px;
 
     
+  }
+  .nav-tabs {
+    border: none;
   }
   .nav-tabs .nav-link.active {
     color: #495057;
@@ -1281,7 +1285,7 @@ image: "https://wayanadtourism.co.in/images/places-to-visit/headers/chembra-peak
 {
 name: "Soochipara Falls",
 description: "A three-tiered waterfall surrounded by dense forests, offering trekking and rock climbing adventures.",
-image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC1LlrV1sdAxWtMxgpEZqJjDNoZ5OMNhX7Ww&s"
+image: "v"
 }
 ],
 images: [
@@ -1379,7 +1383,29 @@ images: [
 //   { name: 'Kasaragod', imageUrl:'https://irisholidays.com/keralatourism/wp-content/uploads/2020/04/theyyam-kerala.gif', description: 'Known for its coir and handloom industries.' }
 // ];
 // File: src/app/pages/about/about.component.html
+<section class="default-banner active-blog-slider">
+    <div *ngFor="let slide of slides; let i = index" 
+         class="item-slider relative" 
+         [style.background-image]="'url(' + slide.imageUrl + ')'"
+         [style.background-size]="'cover'"
+         [class.active]="currentSlide === i">
+      <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+      <div class="container">
+        <div class="row fullscreen justify-content-center align-items-center">
+          <div class="col-md-10 col-12">
+            <div class="banner-content text-center">
+              <h4 class="text-white mb-20 text-uppercase">{{slide.subtitle}}</h4>
+              <h1 class="text-uppercase text-white">{{slide.title}}</h1>
+              <p class="text-white">{{slide.description}}</p>
+              <a routerLink="/district" class="text-uppercase header-btn">Discover more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+<!-- 
         <section class="default-banner active-blog-slider">
                 <div class="item-slider relative" style="background: url('https://cdn.pixabay.com/photo/2017/04/05/16/29/sunset-2205553_1280.jpg');background-size: cover;">
                     <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
@@ -1430,7 +1456,7 @@ images: [
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
 // File: src/app/pages/about/about.component.scss
 /*--------------------------- Color variations ----------------------*/
@@ -1441,124 +1467,150 @@ images: [
 /* =================================== */
 /*  Basic Style 
 /* =================================== */
-.header-btn {
-    background-color: #fff;
-    padding: 8px 40px;
-    font-weight: 600;
-    color: #222;
-    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1);
-    border: 1px solid transparent;
-    border-radius: 20px;
-    margin-top: 30px;
-    display: inline-block;
-  }
+// .header-btn {
+//     background-color: #fff;
+//     padding: 8px 40px;
+//     font-weight: 600;
+//     color: #222;
+//     box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1);
+//     border: 1px solid transparent;
+//     border-radius: 20px;
+//     margin-top: 30px;
+//     display: inline-block;
+//   }
   
-  .header-btn:hover {
-    border: 1px solid #fff;
-    background: transparent;
-    color: #fff;
-  }
-.generic-banner .generic-banner-content h2 {
-    line-height: 1.2em;
-    margin-bottom: 20px;
-  }
+//   .header-btn:hover {
+//     border: 1px solid #fff;
+//     background: transparent;
+//     color: #fff;
+//   }
+// .generic-banner .generic-banner-content h2 {
+//     line-height: 1.2em;
+//     margin-bottom: 20px;
+//   }
   
-  @media (max-width: 991px) {
-    .generic-banner .generic-banner-content h2 br {
-      display: none;
-    }
-  }
+//   @media (max-width: 991px) {
+//     .generic-banner .generic-banner-content h2 br {
+//       display: none;
+//     }
+//   }
   
-  .generic-banner .generic-banner-content p {
-    text-align: center;
-    font-size: 16px;
-  }
+//   .generic-banner .generic-banner-content p {
+//     text-align: center;
+//     font-size: 16px;
+//   }
   
-  @media (max-width: 991px) {
-    .generic-banner .generic-banner-content p br {
-      display: none;
-    }
-  }
-.overlay {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-  }
+//   @media (max-width: 991px) {
+//     .generic-banner .generic-banner-content p br {
+//       display: none;
+//     }
+//   }
+// .overlay {
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//   }
   
-  .video-area .overlay-bg {
-    opacity: .6;
-  }
-  .p1-gradient-bg, .primary-btn, .primary-btn2:hover, .single-feature:hover, .video-area .overlay-bg, .single-footer-widget .click-btn, .generic-banner {
-    background-image: -moz-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
-    background-image: -webkit-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
-    background-image: -ms-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
-  }
+//   .video-area .overlay-bg {
+//     opacity: .6;
+//   }
+//   .p1-gradient-bg, .primary-btn, .primary-btn2:hover, .single-feature:hover, .video-area .overlay-bg, .single-footer-widget .click-btn, .generic-banner {
+//     background-image: -moz-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
+//     background-image: -webkit-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
+//     background-image: -ms-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
+//   }
 
+// .default-banner {
+//     margin-top: -48px;
+//   }
+  
+//   @media (max-width: 991px) {
+//     .default-banner {
+//       text-align: center;
+//     }
+//   }
+  
+//   .default-banner h1 {
+//     color: #222;
+//     font-size: 72px;
+//     font-weight: 700;
+//     line-height: 1em;
+//     margin-bottom: 10px;
+//   }
+  
+//   .default-banner h1 span {
+//     text-transform: uppercase;
+//     font-weight: 700;
+//   }
+  
+//   @media (max-width: 991px) {
+//     .default-banner h1 {
+//       font-size: 36px;
+//     }
+//   }
+  
+//   @media (max-width: 991px) {
+//     .default-banner h1 br {
+//       display: none;
+//     }
+//   }
+  
+//   @media (max-width: 1199px) {
+//     .default-banner h1 {
+//       font-size: 45px;
+//     }
+//   }
+  
+//   @media (max-width: 414px) {
+//     .default-banner h1 {
+//       font-size: 40px;
+//     }
+//   }
+  
+//   @media (max-width: 800px) {
+//     .default-banner {
+//       padding-bottom: 40px;
+//     }
+//   }
+
+  
+//   body {
+//     color: #777777;
+//     font-family: "Poppins", sans-serif;
+//     font-size: 14px;
+//     font-weight: 300;
+//     line-height: 1.625em;
+//     position: relative;
+//   }
+  
 .default-banner {
-    margin-top: -48px;
-  }
-  
-  @media (max-width: 991px) {
-    .default-banner {
-      text-align: center;
-    }
-  }
-  
-  .default-banner h1 {
-    color: #222;
-    font-size: 72px;
-    font-weight: 700;
-    line-height: 1em;
-    margin-bottom: 10px;
-  }
-  
-  .default-banner h1 span {
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  
-  @media (max-width: 991px) {
-    .default-banner h1 {
-      font-size: 36px;
-    }
-  }
-  
-  @media (max-width: 991px) {
-    .default-banner h1 br {
-      display: none;
-    }
-  }
-  
-  @media (max-width: 1199px) {
-    .default-banner h1 {
-      font-size: 45px;
-    }
-  }
-  
-  @media (max-width: 414px) {
-    .default-banner h1 {
-      font-size: 40px;
-    }
-  }
-  
-  @media (max-width: 800px) {
-    .default-banner {
-      padding-bottom: 40px;
-    }
-  }
-
-  
-  body {
-    color: #777777;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.625em;
     position: relative;
+    height: 100vh;
+    overflow: hidden;
   }
   
+  .item-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .item-slider.active {
+    opacity: 1;
+  }
+  
+  .fullscreen {
+    min-height: 100vh;
+  }
 // File: src/app/pages/about/about.component.spec.ts
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -1585,16 +1637,61 @@ describe('AboutComponent', () => {
 });
 
 // File: src/app/pages/about/about.component.ts
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [NgFor,RouterLink],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
 export class AboutComponent {
+  slides = [
+    {
+      imageUrl:'https://wallpapercave.com/wp/wp2649841.jpg',
+      subtitle: 'Discover the Colorful World',
+      title: 'New Adventure',
+      description: 'A tranquil beach known for its golden sands, coconut groves, and calm waters, ideal for relaxation and water sports.'
+    },
+    {
+      imageUrl:'https://wallpapercave.com/wp/wp2649841.jpg',
+      subtitle: 'Discover the Colorful World',
+      title: 'New Trip',
+      description: 'One of the largest waterfalls in Kerala, surrounded by lush green forests and biodiversity.'
+    },
+    {
+      imageUrl: 'https://wallpapercave.com/wp/wp2649841.jpg',
+      subtitle: 'Discover the Colorful World',
+      title: 'New Experience',
+      description: 'A serene beach surrounded by cliffs and palm groves, offering breathtaking sunset views and opportunities for relaxation.'
+    }
+  ];
+
+  currentSlide = 0;
+  private intervalId: any;
+
+  ngOnInit() {
+    this.startSlideshow();
+  }
+
+  ngOnDestroy() {
+    this.stopSlideshow();
+  }
+
+  startSlideshow() {
+    this.intervalId = setInterval(() => {
+      this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+    }, 3000);
+  }
+
+  stopSlideshow() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
 
 }
 
@@ -1839,7 +1936,33 @@ KERALA_DISTRICTS = KERALA_DISTRICTS;
 }
 
 // File: src/app/pages/home/home.component.html
-<div class="home-content">
+
+  <section class="default-banner active-blog-slider">
+    <div *ngFor="let slide of slides; let i = index" 
+         class="item-slider relative" 
+         [style.background-image]="'url(' + slide.imageUrl + ')'"
+         [style.background-size]="'cover'"
+         [class.active]="currentSlide === i">
+      <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+      <div class="container">
+        <div class="row fullscreen justify-content-center align-items-center">
+          <div class="col-md-10 col-12">
+            <div class="banner-content text-center">
+              <h4 class="text-white mb-20 text-uppercase">{{slide.subtitle}}</h4>
+              <h1 class="text-uppercase text-white">{{slide.title}}</h1>
+              <p class="text-white">{{slide.description}}</p>
+              <a routerLink="/district" class="text-uppercase header-btn">Discover more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <div class="home-content">
     <h1 >Explore the world with us. 
         <br>Find your next dream location and plan your trip now to kerala!</h1>
   </div>
@@ -1877,7 +2000,32 @@ KERALA_DISTRICTS = KERALA_DISTRICTS;
       p {
         font-size: 1.2em;
       }
-
+      .default-banner {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+      }
+      
+      .item-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .item-slider.active {
+        opacity: 1;
+      }
+      
+      .fullscreen {
+        min-height: 100vh;
+      }
 
 // File: src/app/pages/home/home.component.spec.ts
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -1908,6 +2056,7 @@ describe('HomeComponent', () => {
 import { Component } from '@angular/core';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 import { RouterLink } from '@angular/router';
+import { NgFor } from '@angular/common';
 
 
 @Component({
@@ -1915,9 +2064,53 @@ import { RouterLink } from '@angular/router';
     standalone: true,
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss',
-    imports: [NavbarComponent,RouterLink]
+    imports: [NavbarComponent,RouterLink,NgFor]
 })
 export class HomeComponent {
+    slides = [
+        {
+          imageUrl:'https://cdn.pixabay.com/photo/2016/11/19/15/38/beach-1839922_1280.jpg',
+          subtitle: 'Discover the Colorful World',
+          title: 'New Adventure',
+          description: 'A tranquil beach known for its golden sands, coconut groves, and calm waters, ideal for relaxation and water sports.'
+        },
+        {
+          imageUrl:'https://photographylife.com/cdn-cgi/imagedelivery/GrQZt6ZFhE4jsKqjDEtqRA/photographylife.com/2015/06/AJT_8848-Edit.jpg/w=2048,h=923',
+          subtitle: 'Discover the Colorful World',
+          title: 'New Trip',
+          description: 'One of the largest waterfalls in Kerala, surrounded by lush green forests and biodiversity.'
+        },
+        {
+          imageUrl: 'https://cdn.pixabay.com/photo/2017/04/05/16/29/sunset-2205553_1280.jpg',
+          subtitle: 'Discover the Colorful World',
+          title: 'New Experience',
+          description: 'A serene beach surrounded by cliffs and palm groves, offering breathtaking sunset views and opportunities for relaxation.'
+        }
+      ];
+    
+      currentSlide = 0;
+      private intervalId: any;
+    
+      ngOnInit() {
+        this.startSlideshow();
+      }
+    
+      ngOnDestroy() {
+        this.stopSlideshow();
+      }
+    
+      startSlideshow() {
+        this.intervalId = setInterval(() => {
+          this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+        }, 3000);
+      }
+    
+      stopSlideshow() {
+        if (this.intervalId) {
+          clearInterval(this.intervalId);
+        }
+      }
+    
 
 }
 

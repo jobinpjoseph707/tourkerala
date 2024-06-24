@@ -1,12 +1,54 @@
-<p>looperdistrict works!</p>
-
-
-
-<div >
-    <h1>{{ district.name }}</h1>
-    <img src="{{district.image}}" [alt]="district.name" height="100px" width="100px">
-    <p>{{ district.description }}</p>
+<div class="districts-container">
+  <div class="parallax-background" [style.background-image]="'url(' + district.images[0] + ')'">
+    <div class="overlay">
+      <h1>{{ district.name }}</h1>
+      <p>{{ district.description }}</p>
+    </div>
   </div>
-  <!-- <ng-template #notFound>
-    <p>District not found</p>
-  </ng-template> -->
+  <div class="district-card">
+
+    <div class="content">
+      <h2>History</h2>
+      <p>{{ district.history }}</p>
+      <h2>Attractions</h2>
+      <div class="attractions-container">
+        <div *ngFor="let attraction of district.attractions" class="attraction-card">
+          <img [src]="attraction.image" [alt]="attraction.name">
+          <div class="attraction-info">
+            <h3>{{ attraction.name }}</h3>
+            <p>{{ attraction.description }}</p>
+          </div>
+        </div>
+      </div>
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img *ngFor="let image of district.images" [src]="image">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class="district-card">
+  <h1>{{ district.name }}</h1>
+  <img [src]="district.image" [alt]="district.name" class="district-image">
+  <div class="district-info">
+    <p>{{ district.description }}</p>
+    <h2>History</h2>
+    <p>{{ district.history }}</p>
+    <h2>Attractions</h2>
+    <div *ngFor="let attraction of district.attractions" class="attraction">
+      <h3>{{ attraction.name }}</h3>
+      <img [src]="attraction.image" [alt]="attraction.name" class="attraction-image">
+      <p>{{ attraction.description }}</p>
+    </div>
+    <h2>Images</h2>
+    <div class="image-gallery">
+      <img *ngFor="let image of district.images" [src]="image" class="gallery-image">
+    </div>
+  </div>
+</div> -->
+
+
+

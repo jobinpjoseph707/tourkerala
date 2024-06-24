@@ -123,30 +123,42 @@
 //     line-height: 1.625em;
 //     position: relative;
 //   }
-  
+  /* In your about.component.scss */
 .default-banner {
-    position: relative;
-    height: 100vh;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
     overflow: hidden;
   }
   
   .item-slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    flex: 1;
     height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   
-  .item-slider.active {
-    opacity: 1;
-  }
+// .default-banner {
+//     position: relative;
+//     height: 100vh;
+//     overflow: hidden;
+//   }
   
-  .fullscreen {
-    min-height: 100vh;
-  }
+//   .item-slider {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     opacity: 0;
+//     transition: opacity 0.5s ease-in-out;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+  
+//   .item-slider.active {
+//     opacity: 1;
+//   }
+  
+//   .fullscreen {
+//     min-height: 100vh;
+//   }

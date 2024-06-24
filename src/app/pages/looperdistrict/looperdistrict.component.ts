@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { KERALA_DISTRICTS } from '../../district-data';
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import{District} from '../../district-data';
 
 @Component({
   selector: 'app-looperdistrict',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf,NgFor],
   templateUrl: './looperdistrict.component.html',
   styleUrl: './looperdistrict.component.scss'
 })
