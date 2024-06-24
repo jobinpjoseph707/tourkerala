@@ -1,0 +1,34 @@
+/* Home Page Styles */
+
+
+      .home-content {
+        width: 100%;
+        height: 100vh;
+        background: url('https://img.freepik.com/free-photo/gazebo-surrounded-by-palm-trees-water-sunset_181624-57249.jpg?t=st=1719206268~exp=1719209868~hmac=e783142bc0429ba9762cbb9a88900a29e71b336e5e83f0289aa7bce42a3f6bc7&w=1060') no-repeat center center; /* Placeholder for a travel-themed background image */
+        background-size: cover;
+        display: flex;
+        justify-content: flex-start;
+        padding: 7rem;
+        align-items: center;
+        text-align: center;
+        h1{
+          color: aliceblue;
+
+        }
+      }
+      
+      
+      .destination-highlight {
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent content box */
+        padding: 20px;
+        border-radius: 10px;
+      }
+      
+      h1 {
+        margin-bottom: 10px;
+      }
+      
+      p {
+        font-size: 1.2em;
+      }
+
